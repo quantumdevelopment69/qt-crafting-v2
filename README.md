@@ -16,13 +16,16 @@ Download the `qt-library` from GitHub and ensure it is started before the `qt-cr
    Go to the `shared.lua` file in the `qt-crafting` resource directory.  
    Select the appropriate framework, target, and inventory path according to your server setup.
 
-## Client Exports
+## Client and Server Exports
 
-You can use the following client-side exports:
+You can use the following client-side and server-side exports:
 
 ```lua
--- Open a specific crafting table from an external script
+-- Open a specific crafting table from an external script (Client-side)
 exports['qt-crafting']:OpenMenu(table_id)
 
--- Load the library functions for the client
+-- Load the library functions for the client (Client-side)
+exports['qt-library']:Load()
+
+-- Load the library functions for the server (Server-side)
 exports['qt-library']:Load()
