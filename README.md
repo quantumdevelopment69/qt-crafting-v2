@@ -20,6 +20,10 @@ Download the `qt-library` from GitHub and ensure it is started before the `qt-cr
 
 You can use the following client-side and server-side exports:
 
+##Check for Busy State
+Use this global function to check if the library is in a busy state:
+QT.IS_BUSY() -- returns boolean (true, false)
+
 ```lua
 -- Open a specific crafting table from an external script (Client-side)
 exports['qt-crafting']:OpenMenu(table_id)
@@ -29,3 +33,5 @@ exports['qt-library']:Load()
 
 -- Load the library functions for the server (Server-side)
 exports['qt-library']:Load()
+
+
