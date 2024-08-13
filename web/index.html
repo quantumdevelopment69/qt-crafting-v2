@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crafting Menu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+    <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+    <script src="script.js" defer></script>
+    <style>
+        ::-webkit-scrollbar {
+            display: none;
+        }
+        .blurred {
+            filter: blur(4px);
+            pointer-events: none;
+        }
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 0.3s forwards;
+        }
+
+        .fade-out {
+            animation: fadeOut 0.3s forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateX(20%);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+                transform: translateX(0);
+            }
+            to {
+                opacity: 0;
+                transform: translateX(-20%);
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.3s forwards;
+        }
+
+        .fade-out {
+            animation: fadeOut 0.3s forwards;
+        }
+
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen select-none">
+    <div id="crafting-box" class="bg-gradient-to-r from-gray-800 to-gray-900 text-white p-6 rounded-lg shadow-lg w-4/5 max-w-4xl hidden relative">
+        <button onclick="closeMenu()" class="absolute top-2 right-2 text-white text-2xl hover:text-gray-400">
+            <i class="fa-regular fa-circle-xmark"></i>
+        </button>        
+        <h1 id="table_name" class="text-3xl font-bold mb-6 text-center">Crafting</h1>
+        <div id="crafting-items" class="overflow-y-auto h-96 px-4 grid grid-cols-3 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-5 gap-4">
+        </div>
+        <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-center text-gray-400 text-sm">
+            &copy; Quantum 2024
+        </div>
+    </div>
+
+    <div id="crafting-detail-modal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
+        <div class="relative bg-gradient-to-r from-gray-800 to-gray-900 text-white p-6 rounded-lg shadow-lg w-96 max-w-full">
+            <button onclick="closeDetails()" class="absolute top-2 right-2 text-white text-2xl hover:text-gray-400">
+                <i class="fa-solid fa-square-caret-left"></i>
+            </button>            
+            
+            <div class="flex items-center mb-4 justify-center">
+                <img id="modal-item-icon" src="copper.png" alt="Item Icon" class="w-12 h-12 object-contain mr-4" draggable="false">
+                <h2 id="modal-item-name" class="text-2xl font-bold">Item Name</h2>
+            </div>
+            <div class="border-t border-gray-600 my-4"></div>
+            <div class="flex items-center mb-4 justify-center">
+                <i class="fas fa-clock fa-lg mr-2"></i>
+                <p id="modal-crafting-time" class="text-lg">Crafting Time: 0s</p>
+            </div>
+            <div class="border-t border-gray-600 my-4"></div>
+            <div id="modal-ingredients" class="mb-4 flex flex-col gap-4 justify-center items-center">
+            </div>
+            <div class="border-t border-gray-600 my-4"></div>
+            <button onclick="startCrafting()" class="bg-gray-600 hover:bg-gray-500 w-full text-center px-4 py-2 rounded-lg flex items-center justify-center mx-auto">
+                <i class="fas fa-tools mr-2"></i> Craft item
+            </button>
+        </div>
+    </div>
+    
+    <div id="crafting-countdown" class="fixed bottom-4 right-4 bg-gray-800 text-white p-6 rounded-lg shadow-lg hidden max-w-xs">
+        <div class="flex items-center justify-center text-center">
+            <img id="countdown-item-icon" src="copper.png" alt="Item Icon" class="w-16 h-16 object-contain mr-4" draggable="false">
+            <div>
+                <p id="countdown-item-name" class="text-xl font-bold">Item Name</p>
+                <p id="countdown-timer" class="text-xl">0s</p>
+            </div>
+        </div>
+    </div>
+    
+
+        <div id="position_helper" class="text-white fixed top-1/2 right-0 transform -translate-y-1/2 bg-gray-800 p-4 rounded-l-lg shadow-lg w-64 hidden">
+            <p class="mb-4">Moving the mouse will move and the object</p>
+            <div class="flex items-center mb-2">
+                <i class="fas fa-keyboard mr-2"></i>
+                <span>[ARROW-LEFT] Rotate left</span>
+            </div>
+            <div class="flex items-center mb-2">
+                <i class="fas fa-keyboard mr-2"></i>
+                <span>[ARROW-RIGHT] Rotate right</span>
+            </div>
+            <div class="flex items-center mb-2">
+                <i class="fas fa-save mr-2"></i>
+                <span>[ENTER] Finish creating</span>
+            </div>
+        </div>
+
+        <audio id="onClick" src="click.mp3"></audio>
+    
+</body>
+</html>

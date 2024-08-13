@@ -1,0 +1,30 @@
+{
+    "91444554": [],
+    "75690863": [],
+    "43406614": {
+        "shitgpu": {
+            "recipe": [
+                {
+                    "item": "copper",
+                    "label": "Copper",
+                    "amount": "22"
+                }
+            ],
+            "craft_time": 9,
+            "label": "GPU",
+            "amount": 2
+        },
+        "lighter": {
+            "recipe": [
+                {
+                    "item": "nitrous",
+                    "label": "nitrous",
+                    "amount": "2"
+                }
+            ],
+            "craft_time": 2,
+            "label": "Lighter",
+            "amount": "1"
+        }
+    }
+}
