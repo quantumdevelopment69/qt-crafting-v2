@@ -15,14 +15,18 @@ exports['qt-library]:Load() -- # DEFINING LIB FUNCTIONS FOR SERVER
 -- # --
 
 -- # CHECK FOR BUSY STATE ( GLOBAL FUNCTION )
+
  !IMPORTANT!  DEFINE QT-LIBRARY 
   QT.IS_BUSY() -- # return boolean (true, false)
+ 
   !explanation! - In some of our new resources, we have added a busy system, either externally or internally. If you want to prevent the opening of the inventory or other actions while our resource is performing a task, you can add this check function. Enjoy!
 -- # 
 
 -- # LIBRARY COMMON FUNCTIONS WITH RESOURCE 
+
    QT.RemoveContext() -- # closing context menu 
    QT.CloseQuestion() -- # closing question form 
+   
 -- DOWNLOAD 
 
 -- # QT-LIBRARY 
