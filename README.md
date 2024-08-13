@@ -1,6 +1,4 @@
-# qt-library
-
-qt-library is a Lua library for FiveM, providing essential functions for resource management and interaction.
+# qt-crafting
 
 ## Installation
 
