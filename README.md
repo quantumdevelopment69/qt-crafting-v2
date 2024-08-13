@@ -1,33 +1,28 @@
--- # INSTALATION
-1. Download qt-library from github 
-2. Ensure to start library before qt-crafting resource 
-3. Go to the shared.lua in qt-crafting resource 
-4. Select framework, target and inventory path that you use for properly script install 
--- # --
+# qt-library
 
--- # CLIENT EXPORT 
-exports['qt-crafting']:OpenMenu(table_id) -- #  FOR EXTERNAL SCRIPT OPEN CERTAIN CRAFTING TABLE 
-exports['qt-library]:Load() -- # DEFINING LIB FUNCTIONS FOR CLIENT 
--- # --
+qt-library is a Lua library for FiveM, providing essential functions for resource management and interaction.
 
--- # SERVER EXPORT
-exports['qt-library]:Load() -- # DEFINING LIB FUNCTIONS FOR SERVER
--- # --
+## Installation
 
--- # CHECK FOR BUSY STATE ( GLOBAL FUNCTION )
+Download the `qt-library` from GitHub and ensure it is started before the `qt-crafting` resource.
 
- !IMPORTANT!  DEFINE QT-LIBRARY 
-  QT.IS_BUSY() -- # return boolean (true, false)
- 
-  !explanation! - In some of our new resources, we have added a busy system, either externally or internally. If you want to prevent the opening of the inventory or other actions while our resource is performing a task, you can add this check function. Enjoy!
--- # 
-
--- # LIBRARY COMMON FUNCTIONS WITH RESOURCE 
-
-   QT.RemoveContext() -- # closing context menu 
-   QT.CloseQuestion() -- # closing question form 
+1. **Download qt-library**:  
+   Download the library from the [GitHub repository](https://github.com/quantumdevelopment69/qt-library).
    
--- DOWNLOAD 
+2. **Start the library**:  
+   Ensure that the `qt-library` resource is started before the `qt-crafting` resource in your `server.cfg`.
 
--- # QT-LIBRARY 
-SRC : https://github.com/quantumdevelopment69/qt-library
+3. **Configure `qt-crafting`**:  
+   Go to the `shared.lua` file in the `qt-crafting` resource directory.  
+   Select the appropriate framework, target, and inventory path according to your server setup.
+
+## Client Exports
+
+You can use the following client-side exports:
+
+```lua
+-- Open a specific crafting table from an external script
+exports['qt-crafting']:OpenMenu(table_id)
+
+-- Load the library functions for the client
+exports['qt-library']:Load()
