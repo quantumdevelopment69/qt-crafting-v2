@@ -1,6 +1,6 @@
 if Shared.Framework == "esx" then 
-    ESX = exports["es_extended"]:getSharedObject()
+    ESX = exports[Shared.FrameworkNames.esx]:getSharedObject()
 elseif Shared.Framework == "qb" then 
-    QBCore = exports['qb-core']:GetCoreObject()
+    QBCore = exports[Shared.FrameworkNames.qb]:GetCoreObject()
 end
 
