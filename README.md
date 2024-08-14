@@ -14,7 +14,7 @@ Download the `qt-library` from GitHub and ensure it is started before the `qt-cr
    Go to the `shared.lua` file in the `qt-crafting-v2` resource directory.  
    Select the appropriate framework, target, and inventory path according to your server setup.
 
-4. **Ensure that folder name is `qt-crafting-v2`**:  
+4. **Ensure that folder name is `qt-crafting-v2`**
 
 ## Client and Server Exports
 
