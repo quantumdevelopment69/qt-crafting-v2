@@ -8,11 +8,13 @@ Download the `qt-library` from GitHub and ensure it is started before the `qt-cr
    Download the library from the [GitHub repository](https://github.com/quantumdevelopment69/qt-library).
    
 2. **Start the library**:  
-   Ensure that the `qt-library` resource is started before the `qt-crafting` resource in your `server.cfg`.
+   Ensure that the `qt-library` resource is started before the `qt-crafting-v2` resource in your `server.cfg`.
 
 3. **Configure `qt-crafting`**:  
-   Go to the `shared.lua` file in the `qt-crafting` resource directory.  
+   Go to the `shared.lua` file in the `qt-crafting-v2` resource directory.  
    Select the appropriate framework, target, and inventory path according to your server setup.
+
+4. **Ensure that folder name is `qt-crafting-v2`**:  
 
 ## Client and Server Exports
 
